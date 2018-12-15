@@ -22,7 +22,7 @@ class Driver {
         String urlInput, numPagesInput;
         try {
             do {
-                System.out.print("Please subreddit (old.reddit) url to scrape e.g. 'https://old.reddit.com/' and pages to scrape: ");
+                System.out.print("Please type subreddit (old.reddit) url to scrape e.g. 'https://old.reddit.com/': ");
                 Scanner sc = new Scanner(System.in);
                 urlInput = sc.next();
             } while(!urlInput.matches(regex));
