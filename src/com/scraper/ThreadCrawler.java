@@ -42,6 +42,7 @@ class ThreadCrawler implements Callable<Void> {
                     Document document = Jsoup.connect(url).get();
                     pool.execute(new CommentParser(document, words));
                     Elements nextUrls = document.select("a.bylink.comments.may-blank, [rel=\"nofollow next\"]");
+                    System.out.println(Thread.currentThread().getName() + " " + document.title());
                     nextUrls.forEach(page -> pool.submit(new ThreadCrawler(page.attr("abs:href"), maxDepth, depth+1, pool, words)));
                 } catch(IOException e) {
                     LOGGER.log(Level.FINEST, "ThreadCrawler");
