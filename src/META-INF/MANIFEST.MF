@@ -1,4 +1,3 @@
 Manifest-Version: 1.0
-Class-Path: jsoup-1.11.3.jar
 Main-Class: com.scraper.Main
 

@@ -2,7 +2,7 @@
 App that crawls comment threads asynchronously starting from the given URL (e.g https://old.reddit.com/r/all/top) and ending at the given number of pages to crawl. Output is in .txt format with the following categories: date, upvotes, and comment. Made with jsoup.
 
 ## How it works
-Program uses a thread pool to assign ThreadCrawlers to asynchronously crawl through the specified old.reddit page only adding the "next >" button at the bottom of the page to the task queue and adding the comments to a list of results. The program is terminated by a ThreadPoolCloser runnable that initiates shutdown of the thread pool when there are no active ThreadCrawlers.
+Program uses a thread pool to assign ThreadCrawlers to asynchronously crawl through the specified old.reddit page only adding the "next >" button at the bottom of the page to the task queue and adding the comments to a list of results. The program is terminated through an asynchronous method invocation of a ThreadPoolCloser runnable that initiates shutdown of the thread pool when there are no active ThreadCrawler threads.
 
 ## Installation
 In the reddit-comment-scraper directory type:
